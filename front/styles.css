@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    /* flex-direction: column; */
+}
+
+textarea {
+    border: none;
+    background: rgb(223, 223, 223);
+    width: 270px;
+    font-size: 20px;
+}
+
+@media print {
+    body :not(.print) {
+        display: none;
+    }
+}
+
+button {
+    width: 140px;
+    height: 70px;
+}
+
+.message {
+    color: green;
+    font-weight: 900;
+}
+
+li {
+    padding: 10px;
+    border: 1px solid black;
+    /* margin: 10px 0px; */
+    list-style-type: none;
+    width: 300px;
+}
+
+li:nth-child(odd) {
+    background-color: rgb(223, 223, 223);
+}
+
+.print-btn {
+    background: rgb(151, 151, 255);
+}
+
+.save-btn {
+    background: rgb(75, 255, 75);
+}
+
+.message {
+    display: none;
+}
+
+.content {
+    /* width: 50%; */
+    /* background: red; */
+    flex: 1;
+}
+
+.messages {
+    /* width: 50%; */
+    flex: 1;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+
+.messages textarea {
+    width: 200px;
+    font-size: 15px;
+}

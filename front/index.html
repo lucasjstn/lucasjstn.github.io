@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- 80x30 -->
+  <link rel="stylesheet" href="styles.css" />
+  <style></style>
+ </head>
+
+ <body>
+  <div id="content" class="print content">
+   <!-- <div>nome:</div>
+    <textarea class="print" name="" id="" cols="1" rows="1"></textarea> -->
+   <div>pedido:</div>
+   <textarea
+    id="order"
+    class="print"
+    name=""
+    id=""
+    cols="30"
+    rows="10"
+   ></textarea>
+
+   <div id="message" class="message">exemplo de mensagem</div>
+
+   <div>
+    <button id="print-btn" class="print-btn">imprimir</button>
+    <button id="btn1" class="save-btn">salvar</button>
+   </div>
+   <div>
+    <h3>Pedidos</h3>
+    <ul reversed id="pedidos"></ul>
+   </div>
+  </div>
+
+  <div class="messages">
+   Mensagens
+   <textarea id="notes-area" name="" id="" cols="10" rows="5"></textarea>
+   <button class="save-message" id="save-note">salvar nota</button>
+  </div>
+
+  <script src="main.js"></script>
+ </body>
+</html>
