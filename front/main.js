@@ -1,12 +1,15 @@
 const btnSalvar = document.querySelector("#btn1");
-const order = document.querySelector("#order");
+const textoPedido = document.querySelector("#texto-pedido");
 const printButton = document.querySelector("#print-btn");
 const listaDePedidos = document.querySelector("#pedidos");
 
 let pedidos = JSON.parse(localStorage.getItem("pedidos"));
+let notas = JSON.parse(localStorage.getItem("notas"));
+
+console.log(notas);
 
 btnSalvar.disabled = true; //botão de salvar desabilitado por enquanto
-// console.log(order.value);
+// console.log(textoPedido.value);
 
 pedidos?.reverse().map((item, index) => {
  //  console.log(item);
@@ -16,11 +19,19 @@ pedidos?.reverse().map((item, index) => {
  listaDePedidos.appendChild(itemLista);
 });
 
+notas?.map((item, index) => {
+ //  console.log(item);
+ const itemNotas = document.createElement("li");
+ itemNotas.innerText = `${item.pedido}\n`;
+
+ listaDePedidos.appendChild(itemLista);
+});
+
 printButton.onclick = () => {
  window.print();
  // printButton.disabled = true;
- //  order.disabled = true;
- if (!order.value) {
+ //  textoPedido.disabled = true;
+ if (!textoPedido.value) {
   return;
  }
 
@@ -33,7 +44,7 @@ printButton.onclick = () => {
  //  console.log(temp, "is how inside the func");
 
  let jsonpedido = {
-  pedido: order.value,
+  pedido: textoPedido.value,
  };
 
  //  console.log(jsonpedido);
@@ -84,9 +95,9 @@ function objectExists(obj, search) {
 
 // function openPrinter() {
 //   //   window.print();
-//   console.log(order.value);
+//   console.log(textoPedido.value);
 //   localStorage.setItem("pedido", JSON.stringify());
-//   //   criarPedido(order.value, pedidos);
+//   //   criarPedido(textoPedido.value, pedidos);
 // }
 // // console.log(btn);
 // // console.log(printButton);
@@ -107,9 +118,9 @@ function objectExists(obj, search) {
 // });
 
 // function salvaPedido() {
-//   p.push({ pedido: order.value });
+//   p.push({ pedido: textoPedido.value });
 //   localStorage.setItem("pedido", JSON.stringify(p));
 //   console.log(p);
-//   order.value = "y";
+//   textoPedido.value = "y";
 //   //   location.reload();
 // }

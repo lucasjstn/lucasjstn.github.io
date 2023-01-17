@@ -1,4 +1,4 @@
-body {
+main {
     display: flex;
 }
 
@@ -10,7 +10,7 @@ textarea {
 }
 
 @media print {
-    body :not(.print) {
+    main :not(.print) {
         display: none;
     }
 }
@@ -41,14 +41,13 @@ button {
     flex: 1;
 }
 
-.messages {
+.notas {
     flex: 1;
     display: flex;
-    align-items: center;
     flex-direction: column;
 }
 
-.messages textarea {
+.notas textarea {
     width: 200px;
     font-size: 15px;
 }
