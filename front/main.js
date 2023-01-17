@@ -19,7 +19,7 @@ pedidos?.map((item, index) => {
  listaDePedidos.appendChild(itemLista);
 });
 
-notas?.map((item, index) => {
+notas?.reverse().map((item, index) => {
  //  console.log(item);
  const itemNotas = document.createElement("li");
  itemNotas.innerText = `${item.pedido}\n`;
@@ -27,6 +27,7 @@ notas?.map((item, index) => {
  listaDePedidos.appendChild(itemLista);
 });
 
+// the ids are not matching the actual pedidos index
 printButton.onclick = () => {
  window.print();
 
@@ -57,10 +58,6 @@ btnSalvar.addEventListener("click", (event) => {
 
  location.reload();
 });
-
-function objectExists(obj, search) {
- return Object.keys(obj).some((key) => obj[key] === search);
-}
 
 //disabling and enabling notes
 // const saveNote = document.querySelector("#save-note");
