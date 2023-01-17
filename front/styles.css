@@ -1,5 +1,11 @@
 main {
     display: flex;
+    /* padding: 10px; */
+}
+
+section {
+    margin: 5px 10px;
+
 }
 
 textarea {
@@ -16,7 +22,7 @@ textarea {
 }
 
 button {
-    width: 140px;
+    width: 135px;
     height: 70px;
 }
 
