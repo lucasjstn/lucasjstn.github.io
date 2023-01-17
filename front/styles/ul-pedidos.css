@@ -3,11 +3,14 @@ ul {
     padding: 0;
 }
 
-li {
+.content li {
     padding: 10px;
     border: 1px solid black;
-    list-style-type: none;
     width: 300px;
+}
+
+li {
+    list-style-type: none;
 }
 
 li:nth-child(odd) {
