@@ -7,6 +7,7 @@ let pedidos = JSON.parse(localStorage.getItem("pedidos"));
 let notas = JSON.parse(localStorage.getItem("notas"));
 
 console.log(notas);
+console.log(pedidos);
 
 btnSalvar.disabled = true; //botão de salvar desabilitado por enquanto
 // console.log(textoPedido.value);
@@ -44,6 +45,7 @@ printButton.onclick = () => {
  //  console.log(temp, "is how inside the func");
 
  let jsonpedido = {
+  id: temp.length,
   pedido: textoPedido.value,
  };
 
