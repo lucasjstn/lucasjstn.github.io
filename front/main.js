@@ -1,4 +1,4 @@
-const btnSalvar = document.querySelector("#btn1");
+const btnSalvar = document.querySelector("#save-btn");
 const textoPedido = document.querySelector("#texto-pedido");
 const printButton = document.querySelector("#print-btn");
 const listaDePedidos = document.querySelector("#pedidos");
