@@ -12,7 +12,7 @@ console.log(pedidos);
 btnSalvar.disabled = true; //botão de salvar desabilitado por enquanto
 // console.log(textoPedido.value);
 
-pedidos?.reverse().map((item, index) => {
+pedidos?.map((item, index) => {
  //  console.log(item);
  const itemLista = document.createElement("li");
  itemLista.innerText = `${item.pedido}\n`;
@@ -50,13 +50,14 @@ printButton.onclick = () => {
  };
 
  //  console.log(jsonpedido);
- temp?.push(jsonpedido);
+ temp?.unshift(jsonpedido);
  //  console.log(temp, "inside the function push");
 
  localStorage.setItem("pedidos", JSON.stringify(temp));
  btnSalvar.disabled = false;
 };
 
+//this button will actually reload the page
 btnSalvar.addEventListener("click", (event) => {
  event.preventDefault();
 
