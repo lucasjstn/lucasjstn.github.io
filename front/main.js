@@ -10,10 +10,9 @@ console.log(notas);
 console.log(pedidos);
 
 btnSalvar.disabled = true; //botão de salvar desabilitado por enquanto
-// console.log(textoPedido.value);
 
+// this will iterate over the pedidos object and add as a child of listadePedidos
 pedidos?.map((item, index) => {
- //  console.log(item);
  const itemLista = document.createElement("li");
  itemLista.innerText = `${item.pedido}\n`;
 
@@ -30,8 +29,7 @@ notas?.map((item, index) => {
 
 printButton.onclick = () => {
  window.print();
- // printButton.disabled = true;
- //  textoPedido.disabled = true;
+
  if (!textoPedido.value) {
   return;
  }
@@ -42,16 +40,12 @@ printButton.onclick = () => {
   temp = [];
  }
 
- //  console.log(temp, "is how inside the func");
-
  let jsonpedido = {
   id: temp.length,
   pedido: textoPedido.value,
  };
 
- //  console.log(jsonpedido);
  temp?.unshift(jsonpedido);
- //  console.log(temp, "inside the function push");
 
  localStorage.setItem("pedidos", JSON.stringify(temp));
  btnSalvar.disabled = false;
