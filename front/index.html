@@ -7,45 +7,54 @@
   <title>Document</title>
   <!-- 80x30 -->
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="styles/ul-pedidos.css" />
+  <!-- <link rel="stylesheet" href="styles/ul-pedidos.css" /> -->
   <style></style>
  </head>
 
  <body>
   <main>
    <section id="content" class="print content">
+    <div class="print">
+     <textarea id="texto-endereco" class="print" cols="60" rows="2">
+rua askdfkasfkas kasdfkasdf kadsfka
+</textarea
+     >
+    </div>
     <div>pedido:</div>
-    <textarea
-     id="texto-pedido"
-     class="print"
-     name=""
-     id=""
-     cols="30"
-     rows="10"
-    ></textarea>
+
+    <textarea id="texto-pedido" class="print" cols="60" rows="30">
+a[6:07 AM, 18/01/2023] Lucas Jstn: oxi
+[6:07 AM, 18/01/2023] Lucas Jstn: vou lavar com vinagre agr
+[6:07 AM, 18/01/2023] Amorzi ♥️: IKKKKKKKK
+[6:07 AM, 18/01/2023] Amorzi ♥️: Que onda
+[6:07 AM, 18/01/2023] Lucas Jstn: sendo q eu ja fiquei passando a lingua
+[6:07 AM, 18/01/2023] Lucas Jstn: vai mudar nd
+[6:08 AM, 18/01/2023] Lucas Jstn: se fosse na hora
+[6:08 AM, 18/01/2023] Amorzi ♥️: Ai vc que sabe
+[6:08 AM, 18/01/2023] Amorzi ♥️: Tô dando a call
+[6:08 AM, 18/01/2023] Amorzi ♥️: Vinagre é bom pra n propaganda infecção[6:07 AM, 18/01/2023] Lucas Jstn: oxi
+[6:07 AM, 18/01/2023] Lucas Jstn: vou lavar com vinagre agr
+[6:07 AM, 18/01/2023] Amorzi ♥️: IKKKKKKKK
+[6:07 AM, 18/01/2023] Amorzi ♥️: Que onda
+[6:07 AM, 18/01/2023] Lucas Jstn: sendo q eu ja fiquei passando a lingua
+[6:07 AM, 18/01/2023] Lucas Jstn: vai mudar nd
+[6:08 AM, 18/01/2023] Lucas Jstn: se fosse na hora
+    </textarea>
 
     <div id="message" class="message">exemplo de mensagem</div>
 
     <div>
      <button id="print-btn" class="print-btn">imprimir</button>
-     <button id="save-btn" class="save-btn">salvar</button>
+     <button id="save-btn" class="save-btn">atualizar</button>
     </div>
     <div>
      <h3>Pedidos</h3>
      <ul reversed id="pedidos"></ul>
     </div>
    </section>
-
-   <section class="notas">
-    Notas
-    <textarea id="notes-area" name="" id="" cols="10" rows="5"></textarea>
-    <button class="save-message" id="save-note">salvar nota</button>
-    <ul>
-     <li>asdjfjsdf</li>
-     <li>asdjfjsdf</li>
-     <li>asdjfjsdf</li>
-    </ul>
-   </section>
+   <button id="clear-storage" class="clear-storage">
+    Limpar todos os pedidos
+   </button>
   </main>
 
   <script src="main.js"></script>
