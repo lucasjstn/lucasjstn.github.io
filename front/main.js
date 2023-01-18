@@ -59,6 +59,13 @@ btnSalvar.addEventListener("click", (event) => {
  location.reload();
 });
 
+const limparBtn = document.querySelector("#clear-storage");
+
+limparBtn.addEventListener("click", () => {
+ localStorage.clear();
+ location.reload();
+});
+
 //disabling and enabling notes
 // const saveNote = document.querySelector("#save-note");
 // const noteArea = document.querySelector("#notes-area");
