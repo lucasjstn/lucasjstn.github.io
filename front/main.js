@@ -12,6 +12,10 @@ console.log(itemIndisponivel);
 botaoRemover.addEventListener("click", () => {
     const item = prompt();
 
+    if (!item) {
+        return;
+    }
+
     let temp = JSON.parse(localStorage.getItem("itemIndisponivel"));
 
     if (!temp) {
@@ -38,7 +42,28 @@ pedidos?.reverse().map((item, index) => {
 
 printButton.onclick = () => {
     const texto = order.value;
+    let allowPrint = 1;
 
+    const itemIndisponivel = JSON.parse(
+        localStorage.getItem("itemIndisponivel")
+    );
+
+    itemIndisponivel.map((object, index) => {
+        if (order.value.includes(object.item)) {
+            const errorMessage = document.querySelector("#error-message");
+
+            console.log(errorMessage.classList.add("invalid"));
+
+            errorMessage.innerHTML = `item ${object.item} indisponivel`;
+            console.log("achou", object.item);
+            allowPrint = false;
+        }
+    });
+    console.log(itemIndisponivel);
+
+    if (allowPrint) {
+        window.print();
+    }
     //window.print();
     // printButton.disabled = true;
     //  order.disabled = true;

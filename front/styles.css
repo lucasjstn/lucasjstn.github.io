@@ -83,6 +83,9 @@ button {
     display: none;
 }
 
+.invalid {
+    border: 1px solid red;
+}
 
 /* .notas {
     flex: 1;
