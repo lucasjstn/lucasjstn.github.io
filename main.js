@@ -3,6 +3,16 @@ const order = document.querySelector("#order");
 const printButton = document.querySelector("#print-btn");
 const listaDePedidos = document.querySelector("#pedidos");
 const botaoRemover = document.querySelector("#btn-remove-item");
+const botaoLimparStorage = document.querySelector("#btn-clear-storage");
+
+botaoLimparStorage.addEventListener("click", () => {
+    if (confirm("Deseja realmente apagar todos os dados?")) {
+        localStorage.clear();
+        location.reload();
+    } else {
+        return;
+    }
+});
 
 let pedidos = JSON.parse(localStorage.getItem("pedidos"));
 let itemIndisponivel = JSON.parse(localStorage.getItem("itemIndisponivel"));
@@ -10,7 +20,11 @@ let itemIndisponivel = JSON.parse(localStorage.getItem("itemIndisponivel"));
 console.log(itemIndisponivel);
 
 botaoRemover.addEventListener("click", () => {
-    const item = prompt();
+    const item = prompt("Remover Item:");
+
+    if (!item) {
+        return;
+    }
 
     let temp = JSON.parse(localStorage.getItem("itemIndisponivel"));
 
@@ -26,6 +40,7 @@ botaoRemover.addEventListener("click", () => {
     temp.push(response);
 
     localStorage.setItem("itemIndisponivel", JSON.stringify(temp));
+    location.reload();
 });
 
 pedidos?.reverse().map((item, index) => {
@@ -39,13 +54,39 @@ pedidos?.reverse().map((item, index) => {
 printButton.onclick = () => {
     const texto = order.value;
 
-    //window.print();
-    // printButton.disabled = true;
-    //  order.disabled = true;
-};
+    let allowPrint = 1;
 
-btn.addEventListener("click", (event) => {
-    event.preventDefault();
+    if (!order.value) {
+        allowPrint = false;
+        return;
+    }
+
+    const itemIndisponivel = JSON.parse(
+        localStorage.getItem("itemIndisponivel")
+    );
+    // explain code gpt
+    itemIndisponivel.map((object, index) => {
+        if (order.value.includes(object.item)) {
+            const errorMessage = document.querySelector("#error-message");
+
+            console.log(errorMessage.classList.add("invalid"));
+
+            errorMessage.innerHTML = `item ${object.item} indisponivel`;
+            console.log("achou", object.item);
+            allowPrint = false;
+        }
+    });
+    console.log(itemIndisponivel);
+
+    if (allowPrint) {
+        window.print();
+    } else {
+        if (confirm("Item indisponível, imprimir mesmo assim?")) {
+            window.print();
+        } else {
+            return;
+        }
+    }
 
     // se nao tiver nada cancela a funçao
     if (!order.value) {
@@ -71,6 +112,14 @@ btn.addEventListener("click", (event) => {
     // console.log(temp, "inside the function push");
 
     localStorage.setItem("pedidos", JSON.stringify(temp));
+    //window.print();
+    // printButton.disabled = true;
+    //  order.disabled = true;
+};
+
+btn.addEventListener("click", (event) => {
+    event.preventDefault();
+
     location.reload();
 });
 

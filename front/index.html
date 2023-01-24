@@ -26,6 +26,10 @@
       body :not(.print) {
         display: none;
       }
+
+      textarea {
+        border: none;
+      }
     }
 
     button {
@@ -61,10 +65,14 @@
     .message {
       display: none;
     }
-    
+
     .invalid {
       border: 1px solid red;
       color: red;
+    }
+
+    #btn-clear-storage {
+      background-color: rgb(255, 75, 75);
     }
   </style>
 </head>
@@ -74,7 +82,7 @@
     <!-- <div>nome:</div>
     <textarea class="print" name="" id="" cols="1" rows="1"></textarea> -->
     <div>pedido: <span id="error-message"></span></div>
-    <textarea id="order" class="print" name="" id="" cols="30" rows="10">asdfasdfda galinha guisada sfadsfadf</textarea>
+    <textarea id="order" class="print" name="" id="" cols="30" rows="10"></textarea>
 
     <div id="message" class="message">
       exemplo de mensagem
@@ -83,13 +91,14 @@
     <div>
       <button id="print-btn" class="print-btn">imprimir</button>
       <button id="btn1" class="save-btn">salvar</button>
-      <button id="btn-remove-item" class="btn-remove-item">remover</button>
+
     </div>
     <div>
       <h3>Pedidos</h3>
       <ul reversed id="pedidos"></ul>
     </div>
-
+    <button id="btn-clear-storage" class="btn-clear-storage">Limpar</button>
+    <button id="btn-remove-item" class="btn-remove-item">remover</button>
     <script src="main.js"></script>
 </body>
 
